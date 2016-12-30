@@ -1,0 +1,23 @@
+{
+  "name": "canvasBasinAnimation",
+  "version": "1.0.0",
+  "description": "Understanding how to move thing on the canvas.",
+  "main": "server.js",
+  "scripts": {
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estebanpadilla/canvasBasinAnimation.git"
+  },
+  "keywords": [],
+  "author": "Esteban Padilla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/estebanpadilla/canvasBasinAnimation/issues"
+  },
+  "homepage": "https://github.com/estebanpadilla/canvasBasinAnimation#readme",
+  "devDependencies": {
+    "lite-server": "^2.2.2"
+  }
+}
