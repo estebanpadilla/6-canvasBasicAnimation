@@ -52,7 +52,7 @@ Ball.prototype.render = function render() {
 Ball.prototype.update = function update() {
 
     //range of values from -5 to 5
-    this.movement = Math.sin(this.angle) * 1;
+    this.movement = Math.sin(this.angle) * 5;
 
     this.y += this.movement;
     this.x += 2;
