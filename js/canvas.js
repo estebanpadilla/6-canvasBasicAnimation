@@ -4,12 +4,16 @@ function init() {
 
     var canvas = undefined;
     var context = undefined;
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+
     canvas = createCanvas();
     context = canvas.getContext('2d');
 
-    var ball = new Ball(0, window.innerHeight / 2, 50, '#ee3344', context);
+    var ball = new Ball(0, height / 2, 50, '#ee3344', context);
 
     function update() {
+
         context.clearRect(0, 0, canvas.width, canvas.height);
 
         ball.update();
@@ -50,8 +54,8 @@ Ball.prototype.update = function update() {
 
     this.x += 1;
 
-    if (this.x > window.width) {
-        this.x = 0;
+    if (this.x > window.innerWidth) {
+        this.x = 0 - this.radius;
     }
 
     this.render();
