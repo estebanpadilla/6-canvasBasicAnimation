@@ -1,9 +1,14 @@
+/**
+ * Learn to use the requestAnimationFrame.
+ * Learn to move shapes.
+ */
+
 window.addEventListener('load', init, false);
 
 function init() {
 
-    var canvas = undefined;
-    var context = undefined;
+    var canvas = null;
+    var context = null;
     var width = window.innerWidth;
     var height = window.innerHeight;
 
