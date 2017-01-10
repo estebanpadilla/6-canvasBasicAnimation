@@ -7,8 +7,7 @@ window.addEventListener('load', init, false);
 
 function init() {
 
-    var canvas = null;
-    var context = null;
+    var canvas, context;
     var width = window.innerWidth;
     var height = window.innerHeight;
 
