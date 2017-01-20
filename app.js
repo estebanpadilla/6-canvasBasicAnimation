@@ -7,14 +7,15 @@ window.addEventListener('load', init, false);
 
 function init() {
 
-    var canvas, context;
-    var width = window.innerWidth;
-    var height = window.innerHeight;
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    let canvas = document.createElement('canvas');
+    document.body.appendChild(canvas);
+    canvas.width = width;
+    canvas.height = height;
+    let context = canvas.getContext('2d');
 
-    canvas = createCanvas();
-    context = canvas.getContext('2d');
-
-    var ball = new Ball(0, height / 2, 50, '#ee3344', context);
+    var ball = new Ball(0, height / 2, 50, 'red', context);
 
     function update() {
 
@@ -22,29 +23,21 @@ function init() {
 
         ball.update();
 
+        if ((ball.x - ball.radius) > width) {
+            ball.x = 0 - ball.radius;
+        }
+
         requestAnimationFrame(update);
     }
     update();
 }
 
-
-function createCanvas() {
-    var canvas = document.createElement('canvas');
-    canvas.style.let = '0px';
-    canvas.style.top = '0px';
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    canvas.style.backgroundColor = '#b5e2ef';
-    document.body.appendChild(canvas);
-    return canvas;
-}
-
 function Ball(x, y, radius, color, context) {
-    this.context = context;
     this.x = x;
     this.y = y;
     this.radius = radius;
     this.color = color;
+    this.context = context;
 }
 
 Ball.prototype.render = function render() {
@@ -55,12 +48,6 @@ Ball.prototype.render = function render() {
 }
 
 Ball.prototype.update = function update() {
-
     this.x += 1;
-
-    if (this.x > window.innerWidth) {
-        this.x = 0 - this.radius;
-    }
-
     this.render();
 }
